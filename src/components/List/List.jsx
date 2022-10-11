@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 
 import useStyles from "./styles";
+import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
 const List = () => {
   const classes = useStyles();
@@ -47,7 +48,10 @@ const List = () => {
       </FormControl>
       <Grid container spacing={3} className={classes.list}>
         {places?.map((place, i) => (
-          <Grid item key={i} xs={12}>{place.name}</Grid>
+          <Grid item key={i} xs={12}>
+            {/* {place.name} */}
+            <PlaceDetails place={place}/>
+          </Grid>
         ))}
       </Grid>
     </div>
