@@ -17,6 +17,12 @@ const List = () => {
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
 
+  const places = [
+    { name: "Wood fired pizza" },
+    { name: "Homemade hearty soup" },
+    { name: "Ancient grains sourdough panini grilled" },
+  ];
+
   return (
     <div className={classes.container}>
       <Typography variant="h4">
@@ -39,6 +45,11 @@ const List = () => {
           <MenuItem value={4.5}>Above 4.5</MenuItem>
         </Select>
       </FormControl>
+      <Grid container spacing={3} className={classes.list}>
+        {places?.map((place, i) => (
+          <Grid item key={i} xs={12}>{place.name}</Grid>
+        ))}
+      </Grid>
     </div>
   );
 };
